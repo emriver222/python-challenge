@@ -3,7 +3,11 @@
 import os
 import csv
 
-csvpath = os.path.join('../../..','Bootcamp Files','UofM-STP-DATA-PT-03-2020-U-C','02-Homework','03-Python','Instructions','PyBank','Resources','budget_data.csv')
+Month_count = 0
+Net_Total = 0
+ChangesList = []
+
+csvpath = os.path.join('../../..','Bootcamp Files (Clone)','UofM-STP-DATA-PT-03-2020-U-C','02-Homework','03-Python','Instructions','PyBank','Resources','budget_data.csv')
 
 with open(csvpath, newline='') as csvfile:
 
@@ -16,17 +20,52 @@ with open(csvpath, newline='') as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
 
+
+
     # Read each row of data after the header
+    FirstRow = next(csv_header)
+    PreviousPL = FirstRow[1]
     for row in csvreader:
-        print(row)
-
-#Counts the number of rows/months
-with open(csvpath, newline='') as csvfile:
-        row_count = sum(1 for row in csvfile)
-        print (row_count)
-
-
+        #print(row)
+        Month_count +=1
+        Net_Total = row[1] + Net_Total
+        NetChange = row[1] - PreviousPL
+        PreviousPL = row[1]
+        ChangesList.append(NetChange)
 
 
 
-    
+#assigning column var
+
+ 
+
+
+#Question 1 -  The total number of months included in the dataset
+        
+        
+#Question 2 - The net total amount of "Profit/Losses" over the entire period, sum list function?
+Net_Total = Profit/Loss.sum
+
+
+for row in csvreader:
+        print(row[1].sum)
+
+#Question 3 - The average of the changes in "Profit/Losses" over the entire period
+Avg= Profit/Loss.avg
+
+#Question 4 - The greatest increase in profits (date and amount) over the entire period
+Max = Profit/Loss.max
+
+    for row in csvreader:
+        print(max(row[1]))
+
+# #Question 5 - The greatest decrease in losses (date and amount) over the entire period
+Min = Profit/Loss.min
+
+
+
+print(f"Total Months: {str(Count)}")
+print(f"Total Profits/Loss: {str(Net_Total)}")
+print(f"The Average Profits/Loss: {str(Avg)}")
+print(f"Greatest Increase Profits/Loss: {str(Max)}")
+print(f"Greatest Decrease Profits/Loss: {str(Min)}")
