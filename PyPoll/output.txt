@@ -1,0 +1,8 @@
+Winner Is:['Khan']
+['Correy', 'Khan', "O'Tooley", 'Li']
+{'Khan': 2218231, 'Correy': 704200, 'Li': 492940, "O'Tooley": 105630}
+Total Votes: 3521001
+Khan Percent of Votes:0.6300001050837531
+O' Tooley Percent of Votes:0.02999999147969569
+Li Percent of Votes:0.13999996023857988
+Correy Percent of Votes:0.19999994319797126
